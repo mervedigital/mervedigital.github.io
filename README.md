@@ -2,6 +2,10 @@
 
 Responsive, statik ve production-ready kişisel marka sitesi.
 
+## Canlı site
+
+https://mervedigital.github.io/
+
 ## Yerelde çalıştırma
 
 ```bash
