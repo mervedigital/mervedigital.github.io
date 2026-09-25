@@ -1,20 +1,37 @@
 const header = document.querySelector('[data-header]');
 const toggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
+const firstNavLink = nav?.querySelector('a');
 
 const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+const closeMenu = ({ restoreFocus = false } = {}) => {
+  nav?.classList.remove('open');
+  toggle?.setAttribute('aria-expanded', 'false');
+  toggle?.setAttribute('aria-label', 'Menüyü aç');
+
+  if (restoreFocus) toggle?.focus();
+};
+
 toggle?.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
+  const isOpen = nav?.classList.toggle('open') ?? false;
   toggle.setAttribute('aria-expanded', String(isOpen));
   toggle.setAttribute('aria-label', isOpen ? 'Menüyü kapat' : 'Menüyü aç');
+
+  if (isOpen) firstNavLink?.focus();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || !nav?.classList.contains('open')) return;
+
+  event.preventDefault();
+  closeMenu({ restoreFocus: true });
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  toggle?.setAttribute('aria-expanded', 'false');
+  closeMenu();
 }));
 
 const observer = new IntersectionObserver((entries) => {
