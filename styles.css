@@ -3,3 +3,69 @@
 @media(max-width:1050px){.site-nav{position:fixed;inset:70px 0 auto;background:var(--cream);padding:32px;display:none;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.site-nav.open{display:flex}.menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:150px}.hero-copy{max-width:760px}.hero-visual{min-height:600px}.image-frame{height:580px}.hero-orbit{right:0}.section-heading,.story,.academy,.steps,.fit,.faq{grid-template-columns:1fr}.need-grid{grid-template-columns:1fr 1fr}.support-grid{grid-template-columns:1fr 1fr}.story-visual{max-width:600px}.story-caption{right:-20px}.steps .section-heading,.faq-heading{position:static}.fit-image{justify-self:start}.fit>*{max-width:800px}.comparison{grid-template-columns:1fr}.comparison-plus{height:70px}.site-footer{grid-template-columns:1fr auto}.site-footer .legal{grid-column:1/-1;grid-row:2}}
 @media(max-width:680px){body{font-size:15px;padding-bottom:66px}.site-header{height:70px;padding:0 18px}.brand small{display:none}.hero{padding:120px 20px 70px;gap:30px}.hero h1{font-size:clamp(53px,17vw,74px)}.hero-lead{font-size:17px}.hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.hero-note{align-items:flex-start}.hero-note .dot{display:none}.hero-note span:last-child{width:100%}.hero-visual{min-height:510px}.image-frame{width:88%;height:500px}.floating-card{left:-5px;bottom:30px;width:210px;padding:17px}.section{padding:90px 20px}.section h2{font-size:45px}.section-heading{display:block}.need-grid{grid-template-columns:1fr;margin-top:45px}.need-card h3{margin-top:30px}.story{gap:65px}.story-visual img{height:570px}.story-caption{right:8px;bottom:-30px}.support{padding-bottom:100px}.support-grid{grid-template-columns:1fr}.support-card{min-height:250px}.clarity-note{flex-direction:column;gap:6px}.curriculum-list>div{grid-template-columns:32px 1fr}.curriculum-list small{display:none}.academy-logo{width:100px;height:100px}.comparison article{padding:28px}.step-list li{grid-template-columns:50px 1fr}.fit-image{height:520px}.faq{gap:35px}.accordion summary{font-size:20px}.final-cta{min-height:650px}.site-footer{padding:45px 20px;grid-template-columns:1fr}.site-footer .legal{grid-row:auto}.to-top{display:none}.mobile-cta{display:flex;position:fixed;z-index:45;left:10px;right:10px;bottom:10px;background:var(--green);color:var(--paper);height:52px;border:1px solid rgba(255,255,255,.2);border-radius:999px;align-items:center;justify-content:space-between;padding:0 22px;font-weight:600;box-shadow:0 12px 35px rgba(0,0,0,.25)}.hero-orbit{width:480px}.ticker div{animation:marquee 20s linear infinite}@keyframes marquee{to{transform:translateX(-50%)}}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-orbit,.ticker div{animation:none!important}}
+
+.academy-intro {
+  padding: clamp(105px, 12vw, 144px) 20px 48px;
+  text-align: center;
+}
+.academy-intro img {
+  width: min(100%, 400px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.academy-intro h1 {
+  margin: 26px 0 20px;
+  font: 400 clamp(38px, 6vw, 76px)/1.05 var(--serif);
+  letter-spacing: -.035em;
+}
+.academy-intro p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.academy-intro strong { color: var(--green); }
+.module-catalog { padding-top: 28px; padding-bottom: 64px; }
+.module-catalog h2 {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: clamp(34px, 4.2vw, 58px);
+}
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.module-grid figure {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.module-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--green);
+}
+.module-grid figcaption {
+  padding: 12px 14px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.story-visual img[src="assets/merve-white-suit.webp"] { object-position: center 28%; }
+@media (max-width: 900px) {
+  .module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .module-grid { grid-template-columns: 1fr; }
+}
